@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { PostService } from "~/server/services/post";
 
 export const postRouter = createTRPCRouter({
   hello: publicProcedure
@@ -29,4 +30,11 @@ export const postRouter = createTRPCRouter({
       orderBy: { createdAt: "desc" },
     });
   }),
+
+  getFavouritesByUser: publicProcedure
+    .input(z.object({ userId: z.number() }))
+    .query(({ input }) => PostService.getFavouritePosts(input.userId)),
+  getAllByUser: publicProcedure
+    .input(z.object({ userId: z.number() }))
+    .query(({ input }) => PostService.getAllPosts(input.userId)),
 });
