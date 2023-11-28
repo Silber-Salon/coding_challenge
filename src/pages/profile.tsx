@@ -38,8 +38,8 @@ function FavouritePosts({ userId }: { userId: any }) {
   return (
     <div className="w-full max-w-2xl">
       <h2 className="text-2xl font-bold">Favourite Posts</h2>
-      {posts?.map((post) => (
-        <div key={post.id} className="flex flex-col gap-4">
+      {posts?.map((post, i) => (
+        <div key={i} className="flex flex-col gap-4">
           <p className="font-bold text-white">{post.title}</p>
         </div>
       )) ?? <p>loading...</p>}
