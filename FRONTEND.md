@@ -11,5 +11,3 @@ The component should work in such a way that the countries are sorted by region 
 In addition, please create a simple navigation bar where the current country with the corresponding flag should be displayed on the right.
 
 Clicking on this component should open the language picker and you should be able to select a different country.
-
-![Alt text](Language_picker_mock.png)
