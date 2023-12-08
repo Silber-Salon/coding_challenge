@@ -51,7 +51,7 @@ interface PostsProps {
   userId: number;
 }
 function Posts({ userId }: PostsProps) {
-  const { data: posts } = api.post.getFavouritesByUser.useQuery({ userId: 2 });
+  const { data: posts } = api.post.getFavouritesByUser.useQuery();
 
   return (
     <div className="w-full max-w-2xl">
